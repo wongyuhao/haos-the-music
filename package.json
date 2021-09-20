@@ -1,0 +1,32 @@
+{
+  "name": "haos-the-music",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "moment": "^2.29.1",
+    "next": "11.1.2",
+    "node-vibrant": "^3.1.6",
+    "querystring": "^0.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-live-clock": "^5.2.0",
+    "react-moment": "^1.1.1",
+    "spotify-web-api-js": "^1.5.1",
+    "swr": "^1.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.15"
+  }
+}
