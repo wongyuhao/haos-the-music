@@ -2,9 +2,10 @@ import useSWR from 'swr';
 import Image from 'next/image'
 import Vibrant from 'node-vibrant';
 import moment from 'moment';
+import Ticker from 'react-ticker'
 import { useEffect, useState } from 'react';
 
-const imageSize = 700;
+const imageSize = 150;
 
 
 function getTime(){
@@ -32,7 +33,6 @@ export default function Home() {
           background: palette[colour].getHex()
         }
       })
-    let swatches = albumColours
     let {text, background} = albumColours[Math.floor(Math.random() * albumColours.length)]
     setColors({
       text:text,
@@ -55,19 +55,18 @@ export default function Home() {
     
     return (
       <>
-        <section className='h-screen w-screen max-w-screen flex flex-col items-center justify-between align-middle' style={{color: colors.text, backgroundColor: colors.background, }}>
-          <main className='h-5/6 flex flex-col items-center justify-center align-middle'>
+        <section className='h-screen w-screen max-w-screen flex items-center justify-between align-middle' style={{color: colors.text, backgroundColor: colors.background, }}>
+          <main className='flex flex-row w-full items-center justify-evenly'>
             <div className='shadow-2xl' style={{width:'50vw', height: '50vw', maxWidth: imageSize, maxHeight:imageSize}}>
               <Image className='shadow'src={albumImageUrl} width={imageSize} height={imageSize}/>
             </div>
-            <h1 className='mt-10' style={{fontFamily:'', fontWeight:'bold', fontSize:'2.5em', whiteSpace:'nowrap', overflow:'hidden', textOverflow: 'ellipsis'}}>{title}</h1>
-            <h2 className='' style={{fontFamily:'', fontWeight:'thin', fontSize:'1.7em', opacity:'0.7',}}>{artist}</h2>
-          </main>
-          <div className="h-1/6">
-            <div className='text-6xl font-bold' style={{ opacity:'0.5'}}>
-              {time}
+            <div className='' style={{maxWidth: '55vw'}}>
+                <div>
+                  <h1 className='' style={{fontFamily:'', fontWeight:'bold', fontSize:'2.2em', whiteSpace:'nowrap', overflow:'hidden', textOverflow: 'ellipsis'}}>{title}</h1>
+                  <h2 className='' style={{fontFamily:'', fontWeight:'thin', fontSize:'1.2em', opacity:'0.7',}}>{artist}</h2>
+                </div>
             </div>
-          </div>
+          </main>
         </section>
       </>
     );
@@ -76,7 +75,7 @@ export default function Home() {
       <>
         <section className='h-screen w-screen max-w-screen flex flex-col items-center justify-center align-middle' style={{backgroundColor:'black', color: 'white'}}>
           <div className="">
-            <div className='text-7xl font-bold' style={{ opacity:'0.5'}}>
+            <div className='text-8xl font-bold' style={{ opacity:'0.5'}}>
               {time}
             </div>
           </div>
